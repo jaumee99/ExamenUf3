@@ -3,11 +3,11 @@
     <button (click)="midaImatge(formData)">mida</button>
 </form>
 
-<!--
+
 <h2>
-    Page {{ artwork.current_page }} de {{ artwork.total_pages }}
+    Page {{ artworks.current_page }} de {{ artworks.total_pages }}
 </h2>
--->
+
 
 <table>
     <thead>
@@ -23,7 +23,12 @@
         <td>{{ artwork.title }}</td>
         <td>{{ artwork.id }}</td>
         <td><img [src]="artwork.thumbnail"></td>
-        <th><button (click)="visualitzar(artwork.id)">Visualitzar</button></th>
+        <td><button (click)="visualitzar(artwork.id)">Visualizar</button></td>
+        <td><img [src]="selectedArtwork?.image_id" (click)="detail(artwork.image_id)">
+        <!--    <p>nom: {{}}</p>
+            <p>any naixment: {{}}</p>
+            <p>nay mort: {{}}</p>-->
+        </td>
       </tr>
     </tbody>
   </table>

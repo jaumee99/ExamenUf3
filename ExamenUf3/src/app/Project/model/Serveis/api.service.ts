@@ -15,4 +15,8 @@ export class ApiService {
     return this.http.get(this.apiUrlBase);
   }
 
+  getImage() {
+  //  return this.http.get(this.apiUrlBase + );
+  }
+
 }
