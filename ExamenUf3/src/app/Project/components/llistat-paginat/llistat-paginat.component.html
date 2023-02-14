@@ -3,23 +3,28 @@
     <button (click)="midaImatge(formData)">mida</button>
 </form>
 
-<h2  *ngFor="let artwork of artworks">
-    Page {{ artwork.current_page }} of {{ artwork.total_pages }}
+<!--
+<h2>
+    Page {{ artwork.current_page }} de {{ artwork.total_pages }}
 </h2>
+-->
 
 <table>
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>ID</th>
-            <th>Imatge</th>
-        </tr>
+      <tr>
+        <th>Title</th>
+        <th>Id</th>
+        <th>Image</th>
+        <th>Visualitzar</th>
+      </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let artwork of artworks">
-            <td>{{ artwork.title }}</td>
-            <td>{{ artwork.id }}</td>
-            <td>{{ artwork.iiif_url }}</td>
-        </tr>
+      <tr *ngFor="let artwork of artworks">
+        <td>{{ artwork.title }}</td>
+        <td>{{ artwork.id }}</td>
+        <td><img [src]="artwork.thumbnail"></td>
+        <th><button (click)="visualitzar(artwork.id)">Visualitzar</button></th>
+      </tr>
     </tbody>
-</table>
+  </table>
+  

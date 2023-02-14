@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ApiService {
 
   private apiUrlBase = 'https://api.artic.edu/api/v1/artworks';
 
-  getArtworks() {
+  getArtworks(): Observable<any> {
     return this.http.get(this.apiUrlBase);
   }
 
