@@ -1,4 +1,25 @@
 <form>
     <input [(ngModel)]="formData.mida" type="text" name="mida" placeholder="mida" ngModel>
     <button (click)="midaImatge(formData)">mida</button>
-  </form>
+</form>
+
+<h2  *ngFor="let artwork of artworks">
+    Page {{ artwork.current_page }} of {{ artwork.total_pages }}
+</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>ID</th>
+            <th>Imatge</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let artwork of artworks">
+            <td>{{ artwork.title }}</td>
+            <td>{{ artwork.id }}</td>
+            <td>{{ artwork.iiif_url }}</td>
+        </tr>
+    </tbody>
+</table>
